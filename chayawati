@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Gollen Dot Chaya 🪔</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 50% 0%, #782c36, transparent 55%),
+      linear-gradient(145deg, #170913, #32101d, #120812);
+    color: #ffe8c2;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(#ffd889 1px, transparent 1px),
+      radial-gradient(#ffb5a7 1px, transparent 1px);
+    background-size: 65px 65px, 105px 105px;
+    opacity: .25;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: min(92%, 680px);
+    margin: auto;
+    padding: 65px 0;
+}
+
+.small-title {
+    color: #ffcf8b;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(48px, 10vw, 78px);
+    color: #ffd68d;
+    margin: 20px 0 8px;
+    text-shadow: 0 0 25px #ff9d42;
+}
+
+.subtitle {
+    color: #ffc7b4;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.diyas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 42px 0;
+}
+
+.diya {
+    font-size: 48px;
+    filter: drop-shadow(0 0 12px #ffb34c);
+    animation: flicker 1.4s infinite alternate;
+}
+
+.diya:nth-child(2) { animation-delay: .5s; }
+.diya:nth-child(3) { animation-delay: 1s; }
+
+@keyframes flicker {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-7px) scale(1.08); }
+}
+
+.glass {
+    background: rgba(255, 230, 205, .075);
+    border: 1px solid rgba(255, 220, 175, .32);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+      0 8px 35px rgba(0,0,0,.25),
+      inset 0 1px 1px rgba(255,255,255,.15);
+    border-radius: 25px;
+}
+
+.message-card {
+    padding: 32px 25px;
+}
+
+.highlight {
+    font-family: 'Dancing Script', cursive;
+    font-size: 29px;
+    color: #ffd28b;
+    margin-bottom: 20px;
+}
+
+.message-card p {
+    font-size: 14px;
+    line-height: 2.1;
+    color: #ffe8d2;
+}
+
+.divider {
+    width: 75px;
+    height: 2px;
+    margin: 28px auto;
+    background: linear-gradient(90deg, transparent, #ffd28b, transparent);
+}
+
+.question {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(30px, 7vw, 43px);
+    color: #ffdaa1;
+    margin: 35px 0 12px;
+}
+
+.question-sub {
+    color: #eabdb5;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.choice-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 100px;
+    flex-wrap: wrap;
+}
+
+.glass-btn {
+    position: relative;
+    overflow: hidden;
+    padding: 15px 29px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.4);
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.22),
+        rgba(255,255,255,.04)
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #fff2dc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow:
+      0 0 15px rgba(255,195,125,.2),
+      inset 0 1px 1px rgba(255,255,255,.35);
+    transition: .3s;
+}
+
+.glass-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: .6s;
+}
+
+.glass-btn:hover::before {
+    left: 150%;
+}
+
+.glass-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 28px rgba(255,190,110,.5);
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, rgba(226,105,115,.55), rgba(155,40,80,.4));
+    border-color: #ffc1bb;
+    box-shadow: 0 0 22px rgba(255,100,130,.35);
+}
+
+#noBtn {
+    transition: left .25s ease, top .25s ease;
+}
+
+#surprise {
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    color: #ffd68d;
+    line-height: 1.5;
+    margin-top: 30px;
+    min-height: 65px;
+}
+
+.forward {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    color: #ffe6c1;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 18px rgba(255,195,125,.2);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.forward:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px #ffb86b;
+}
+
+.forward-icon {
+    font-size: 21px;
+    animation: slide 1s infinite alternate;
+}
+
+@keyframes slide {
+    to { transform: translateX(6px); }
+}
+
+.footer {
+    margin-top: 55px;
+    color: #dba9a1;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    z-index: 10;
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#finalSurprise {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    animation: appear .8s ease;
+}
+
+#finalSurprise h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 37px;
+    color: #ffd68d;
+    margin-bottom: 12px;
+}
+
+#finalSurprise p {
+    font-size: 13px;
+    line-height: 2;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 480px) {
+    .message-card { padding: 25px 18px; }
+    .message-card p { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+    <div class="small-title">A little festival surprise</div>
+
+    <h1>Happy Diwali, Chaya 🪔</h1>
+
+    <div class="subtitle">For my favourite little sunshine ♥️</div>
+
+    <div class="diyas">
+        <span class="diya">🪔</span>
+        <span class="diya">🪔</span>
+        <span class="diya">🪔</span>
+    </div>
+
+    <section class="message-card glass">
+
+        <div class="highlight">A little something for you...</div>
+
+        <p>
+        my gollen dot chaya ( not chhaya ) 😂 I wish you every happyness come to you ( not happiness it's happyness ) and you know what you the diya of everyone's life you walk in . But i the diya 🪔 sometimes forget to light up on its own providing light to others . So here is another diya 🪔 for her ( me ) dumbo ♥️ wish my te amo and her family a well being life ahead
+        </p>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <div class="question">
+        One tiny question, Chaya...
+    </div>
+
+    <div class="question-sub">
+        Will you accept this little diya from me? 🥺
+    </div>
+
+    <div class="choice-area" id="choiceArea">
+
+        <button class="glass-btn yes-btn" onclick="sayYes()">
+            YES, OBVIOUSLY ♥️
+            <span class="forward-icon">➜</span>
+        </button>
+
+        <button class="glass-btn" id="noBtn"
+            onmouseenter="moveNo()"
+            onclick="moveNo()">
+            NO 🙄
+        </button>
+
+    </div>
+
+    <div id="surprise"></div>
+
+    <section id="finalSurprise" class="glass">
+        <h2>Hehe, I knew it! ♥️</h2>
+        <p>
+            Then this diya is officially yours.
+            Keep smiling, keep shining, and never forget
+            that somebody out here wishes the brightest
+            happiness for you. 🪔✨
+            <br><br>
+            Te amo, my gollen dot. 💗
+        </p>
+    </section>
+
+    <button class="forward" onclick="extraSurprise()">
+        <span class="forward-icon">✨</span>
+        One last surprise
+        <span class="forward-icon">➜</span>
+    </button>
+
+    <div class="footer">
+        MADE WITH A LITTLE EXTRA PYAAR ♥️
+        <br>
+        THIS LIGHT IS FOR YOU, CHAYA.
+        <br><br>
+        ∞
+    </div>
+
+</main>
+
+<script>
+
+const surprise = document.getElementById("surprise");
+const noBtn = document.getElementById("noBtn");
+
+function createHearts() {
+    const symbols = ["💗", "✨", "🪔", "♥️", "🌸", "💫"];
+
+    for (let i = 0; i < 18; i++) {
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerText = symbols[
+            Math.floor(Math.random() * symbols.length)
+        ];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 22) + "px";
+        heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+    }
+}
+
+function moveNo() {
+    const area = document.getElementById("choiceArea");
+    const maxX = Math.max(0, area.clientWidth - noBtn.offsetWidth);
+    const maxY = 90;
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+
+    surprise.innerText = "AHAHAHA, you can't reject my diya! 😂";
+}
+
+function sayYes() {
+    surprise.innerText = "YOU SAID YESSSS! 🥹💗";
+
+    document.getElementById("finalSurprise").style.display = "block";
+
+    noBtn.style.display = "none";
+
+    createHearts();
+
+    document.getElementById("finalSurprise").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function extraSurprise() {
+    surprise.innerText =
+        "Plot twist: You were the surprise all along, dumbo. ♥️✨";
+
+    createHearts();
+}
+
+</script>
+
+</body>
+</html>
+  
